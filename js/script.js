@@ -18,7 +18,7 @@ let calcU;
 let diameter;
 let radius;
 
-function circleMachina() {
+function circleMachina(range) {
     for (let i = range.length -1; i >= 0; i--) {
 
         calcUR = (master ** range[i]).toFixed(4);
@@ -26,39 +26,22 @@ function circleMachina() {
         diameter = (calcUR * constant).toFixed(2);
         radius = ((calcUR * constant) / 2).toFixed(2);
 
-        let print = () => {
-            console.log(`calcUR: ${calcUR}`);
-            console.log(`calcU: ${calcU}`);
-            console.log(`radius: ${radius}`);
-            console.log(`diameter: ${diameter}`);
-            console.log(parseFloat(diameter));
-            console.log();
-        };
-        print();
-
         let circleId = `c${range[i]}`;
         let newCircle = $('<div class="circle m-1"></div>');
         newCircle.attr('id', circleId);
-        // console.log(newCircle)
-        // addClass(`${range[i]}`)
         $('#circles').append(newCircle);
         $(newCircle).css("height", parseFloat(diameter));
         $(newCircle).css("width", parseFloat(diameter));
     }
 }
 
-circleMachina();
+circleMachina(range);
 
-let $button = $('.increment-btn');
-let $counter = $('.counter');
-
-$button.click(function(){
-    $counter.val( parseInt($counter.val()) + 1 ); // `parseInt` converts the `value` from a string to a number
-});
-
+//print initial limits
 $(`.lowerValue`).text(lowerLimit);
 $(`.upperValue`).text(upperLimit);
 
+//hover color
 $('.fa-solid').hover(function() {
     $(this).css("color", "var(--medium-orange");
 });
@@ -67,21 +50,54 @@ $('.fa-solid').mouseleave(function() {
     $(this).css("color", "");
 });
 
-$('.fa-caret-down').click(function() {
-    lowerLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
-    $(this).siblings("h1").find('span').text(lowerLimit);
+
+function updateLimits() {
+    lowerLimit = parseInt($(`.lowerValue`).text());
+    upperLimit = parseInt($(`.upperValue`).text());
+};
+
+let newLimit;
+//increment lower
+$('.fa-caret-up.lowerMarker').click(function() {
+    updateLimits();
+    newLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
+    $(this).siblings("h1").find("span").text(newLimit);
+    console.log(newLimit);
+    updateLimits();
+    range = rangeMachina(lowerLimit, upperLimit, 1)
+    $(`#circles`).text("");
+    circleMachina(range);
 });
 
-$('.fa-caret-up').click(function() {
-    upperLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
-    $(this).siblings("h1").find('span').text(upperLimit);
+//decrement lower
+$('.fa-caret-down.lowerMarker').click(function() {
+    updateLimits();
+    newLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
+    $(this).siblings("h1").find("span").text(newLimit);
+    updateLimits();
+    range = rangeMachina(lowerLimit, upperLimit, 1)
+    $(`#circles`).text("");
+    circleMachina(range);
+});
+//increment upper
+$('.fa-caret-up.upperMarker').click(function() {
+    updateLimits();
+    newLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
+    $(this).siblings("h1").find("span").text(newLimit);
+    console.log(newLimit);
+    updateLimits();
+    range = rangeMachina(lowerLimit, upperLimit, 1)
+    $(`#circles`).text("");
+    circleMachina(range);
 });
 
-
-// console.log("constant: " + constant);
-// console.log("master: " + master);
-// console.log("calcUR: " + calcUR);
-// console.log("calcU: " + calcU);
-// console.log("diameter: " + diameter);
-// console.log("radius: " + radius);
-
+//decrement upper
+$('.fa-caret-down.upperMarker').click(function() {
+    updateLimits();
+    newLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
+    $(this).siblings("h1").find("span").text(newLimit);
+    updateLimits();
+    range = rangeMachina(lowerLimit, upperLimit, 1)
+    $(`#circles`).text("");
+    circleMachina(range);
+});
