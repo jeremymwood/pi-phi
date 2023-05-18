@@ -9,12 +9,14 @@ const rangeMachina = (begin, end, interval) =>
         { length: (end - begin) / interval + 1 },
         (value, index) => begin + index * interval
     );
+let lowerLimit = -14;
+let upperLimit = 10;
+let range = rangeMachina(lowerLimit, upperLimit, 1);
 
-let range = rangeMachina(-14, 10, 1);
-let calcUR = 0;
-let calcU = 0;
-let diameter = 0;
-let radius = 0;
+let calcUR;
+let calcU;
+let diameter;
+let radius;
 
 function circleMachina() {
     for (let i = range.length -1; i >= 0; i--) {
@@ -46,7 +48,9 @@ function circleMachina() {
 }
 
 $(document).ready(function () {
-    circleMachina()
+    $(`<p>Lower Limit: ${lowerLimit}</p>`).appendTo('.lowerLimit');
+    $(`<p>Upper Limit: ${upperLimit}</p>`).appendTo('.upperLimit');
+    circleMachina();
 });
 
 // circleMachina();
