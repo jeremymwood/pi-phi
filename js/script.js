@@ -47,13 +47,36 @@ function circleMachina() {
     }
 }
 
-$(document).ready(function () {
-    $(`<p>Lower Limit: ${lowerLimit}</p>`).appendTo('.lowerLimit');
-    $(`<p>Upper Limit: ${upperLimit}</p>`).appendTo('.upperLimit');
-    circleMachina();
+circleMachina();
+
+let $button = $('.increment-btn');
+let $counter = $('.counter');
+
+$button.click(function(){
+    $counter.val( parseInt($counter.val()) + 1 ); // `parseInt` converts the `value` from a string to a number
 });
 
-// circleMachina();
+$(`.lowerValue`).text(lowerLimit);
+$(`.upperValue`).text(upperLimit);
+
+$('.fa-solid').hover(function() {
+    $(this).css("color", "var(--medium-orange");
+});
+
+$('.fa-solid').mouseleave(function() {
+    $(this).css("color", "");
+});
+
+$('.fa-caret-down').click(function() {
+    lowerLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
+    $(this).siblings("h1").find('span').text(lowerLimit);
+});
+
+$('.fa-caret-up').click(function() {
+    upperLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
+    $(this).siblings("h1").find('span').text(upperLimit);
+});
+
 
 // console.log("constant: " + constant);
 // console.log("master: " + master);

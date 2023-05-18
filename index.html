@@ -15,8 +15,20 @@
 </head>
 <body>
     <div class="m-5">
-        <h1 class="limit lowerLimit"></h1>
-        <h1 class="limit upperLimit mb-5"></h1>
+        <div class="d-flex lowerLimit">
+            <h1 class="d-flex me-auto">
+                Lower Limit: <span class="lowerValue"></span>
+            </h1>
+            <i class="fa-solid fa-caret-up mx-3"></i>
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <div class="d-flex upperLimit">
+            <h1 class="d-flex mb-5 me-auto">
+                Upper Limit: <span class="upperValue"></span>
+            </h1>
+            <i class="fa-solid fa-caret-up mx-3"></i>
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
         <div class="d-flex flex-wrap" id="circles"></div>
     </div>
 
