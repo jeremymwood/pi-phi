@@ -57,20 +57,19 @@ function updateLimits() {
 };
 
 let newLimit;
+
 //increment lower
-$('.fa-caret-up.lowerMarker').click(function() {
+$('.fa-caret-up.lowerMarker').mousedown(function() {
     updateLimits();
     newLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
     $(this).siblings("h1").find("span").text(newLimit);
-    console.log(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1)
     $(`#circles`).text("");
     circleMachina(range);
 });
-
 //decrement lower
-$('.fa-caret-down.lowerMarker').click(function() {
+$('.fa-caret-down.lowerMarker').mousedown(function() {
     updateLimits();
     newLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
     $(this).siblings("h1").find("span").text(newLimit);
@@ -80,11 +79,10 @@ $('.fa-caret-down.lowerMarker').click(function() {
     circleMachina(range);
 });
 //increment upper
-$('.fa-caret-up.upperMarker').click(function() {
+$('.fa-caret-up.upperMarker').mousedown(function() {
     updateLimits();
     newLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
     $(this).siblings("h1").find("span").text(newLimit);
-    console.log(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1)
     $(`#circles`).text("");
@@ -92,7 +90,7 @@ $('.fa-caret-up.upperMarker').click(function() {
 });
 
 //decrement upper
-$('.fa-caret-down.upperMarker').click(function() {
+$('.fa-caret-down.upperMarker').mousedown(function() {
     updateLimits();
     newLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
     $(this).siblings("h1").find("span").text(newLimit);

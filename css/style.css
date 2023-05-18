@@ -25,3 +25,10 @@ body {
 .fa-solid {
     font-size: 4em;
 }
+output {
+    width: auto;
+}
+
+input {
+    width: auto;
+}

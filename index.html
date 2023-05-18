@@ -16,16 +16,24 @@
 <body>
     <div class="m-5">
         <div class="d-flex lowerLimit">
-            <h1 class="d-flex me-auto">
+            <h1 class="d-flex me-auto my-auto">
                 Lower Limit: <span class="value lowerValue"></span>
             </h1>
+            <div class="d-flex">
+                <output class="lower-output me-3 my-auto" for="lowerSlider"></output>
+                <input type="range" id="lowerSlider" min="-20" max="20" name="lowerSlider" step="1" value="1">
+            </div>
             <i class="fa-solid fa-caret-up lowerMarker mx-3"></i>
             <i class="fa-solid fa-caret-down lowerMarker"></i>
         </div>
         <div class="d-flex upperLimit">
-            <h1 class="d-flex mb-5 me-auto">
+            <h1 class="d-flex me-auto my-auto">
                 Upper Limit: <span class="value upperValue"></span>
             </h1>
+            <div class="d-flex">
+                <output class="upperOutput me-3 my-auto" for="upperSlider"></output>
+                <input type="range" id="upperSlider" min=-20" max="20" name="upperSlider" step="1" value="1">
+            </div>
             <i class="fa-solid fa-caret-up upperMarker mx-3"></i>
             <i class="fa-solid fa-caret-down upperMarker"></i>
         </div>
@@ -34,5 +42,6 @@
 
     <script src="js/jquery-3.6.3.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/slider.js"></script>
 </body>
 </html>
