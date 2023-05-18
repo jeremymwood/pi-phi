@@ -3,7 +3,7 @@ body {
     height: 100%;
 }
 
-#circle {
+.circle {
     background-color: black !important;
     color: black;
     border-radius: 50%;

@@ -17,7 +17,9 @@ console.log("diameter: " + diameter);
 console.log("radius: " + radius);
 
 $(document).ready(function () {
-    $("#circle").css("height", diameter);
-    $("#circle").css("width", diameter);
+    $('#circles').append('<div class="circle m-1"></div>');
+    $(".circle").css("height", diameter);
+    $(".circle").css("width", diameter);
 });
+
 
