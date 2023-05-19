@@ -11,7 +11,13 @@ const rangeMachina = (begin, end, interval) =>
     );
 let lowerLimit = -14;
 let upperLimit = 10;
-let range = rangeMachina(lowerLimit, upperLimit, 1);
+let interval = 1;
+let min = -20;
+let max = 20;
+let range = rangeMachina(lowerLimit, upperLimit, interval);
+
+$('#lowerSlider').attr("step", interval).attr("min", min).attr("max", max).attr("value", lowerLimit);
+$('#upperSlider').attr("step", interval).attr("min", min).attr("max", max).attr("value", upperLimit);
 
 let calcUR;
 let calcU;
@@ -64,7 +70,13 @@ $('.fa-caret-up.lowerMarker').mousedown(function() {
     newLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
     $(this).siblings("h1").find("span").text(newLimit);
     updateLimits();
-    range = rangeMachina(lowerLimit, upperLimit, 1)
+    range = rangeMachina(lowerLimit, upperLimit, 1);
+
+    $('#lowerSlider').attr("value", lowerLimit);
+    $('#upperSlider').attr("value", upperLimit);
+    lowerOutput.textContent = lowerSlider.value;
+    upperOutput.textContent = upperSlider.value;
+
     $(`#circles`).text("");
     circleMachina(range);
 });
@@ -74,7 +86,13 @@ $('.fa-caret-down.lowerMarker').mousedown(function() {
     newLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
     $(this).siblings("h1").find("span").text(newLimit);
     updateLimits();
-    range = rangeMachina(lowerLimit, upperLimit, 1)
+    range = rangeMachina(lowerLimit, upperLimit, 1);
+
+    $('#lowerSlider').attr("value", lowerLimit);
+    $('#upperSlider').attr("value", upperLimit);
+    lowerOutput.textContent = lowerSlider.value;
+    upperOutput.textContent = upperSlider.value;
+
     $(`#circles`).text("");
     circleMachina(range);
 });
@@ -84,7 +102,13 @@ $('.fa-caret-up.upperMarker').mousedown(function() {
     newLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
     $(this).siblings("h1").find("span").text(newLimit);
     updateLimits();
-    range = rangeMachina(lowerLimit, upperLimit, 1)
+    range = rangeMachina(lowerLimit, upperLimit, 1);
+
+    $('#lowerSlider').attr("value", lowerLimit);
+    $('#upperSlider').attr("value", upperLimit);
+    lowerOutput.textContent = lowerSlider.value;
+    upperOutput.textContent = upperSlider.value;
+
     $(`#circles`).text("");
     circleMachina(range);
 });
@@ -95,7 +119,13 @@ $('.fa-caret-down.upperMarker').mousedown(function() {
     newLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
     $(this).siblings("h1").find("span").text(newLimit);
     updateLimits();
-    range = rangeMachina(lowerLimit, upperLimit, 1)
+    range = rangeMachina(lowerLimit, upperLimit, 1);
+
+    $('#lowerSlider').attr("value", lowerLimit);
+    $('#upperSlider').attr("value", upperLimit);
+    lowerOutput.textContent = lowerSlider.value;
+    upperOutput.textContent = upperSlider.value;
+
     $(`#circles`).text("");
     circleMachina(range);
 });
