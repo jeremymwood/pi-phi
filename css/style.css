@@ -18,8 +18,8 @@ body {
 }
 
 .circle {
-    background-color: var(--medium-orange);
-    color: black;
+    background-color: black;
+    border: var(--medium-orange) 2px solid;
     border-radius: 50%;
 }
 .fa-solid {

@@ -61,7 +61,32 @@ function updateLimits() {
     upperLimit = parseInt($(`.upperValue`).text());
 };
 
+
 let newLimit;
+// function increment() {
+//     updateLimits();
+//     newLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
+//     $(this).siblings("h1").find("span").text(newLimit);
+//     updateLimits();
+//     range = rangeMachina(lowerLimit, upperLimit, 1);
+// };
+// function decrement() {
+//     updateLimits();
+//     newLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
+//     $(this).siblings("h1").find("span").text(newLimit);
+//     updateLimits();
+//     range = rangeMachina(lowerLimit, upperLimit, 1);
+// };
+function updateSlider() {
+    $('#lowerSlider').attr("value", lowerLimit);
+    $('#upperSlider').attr("value", upperLimit);
+    lowerOutput.textContent = lowerSlider.value;
+    upperOutput.textContent = upperSlider.value;
+};
+function updateCircles() {
+    $(`#circles`).text("");
+    circleMachina(range);
+};
 
 //increment lower
 $('.fa-caret-up.lowerMarker').mousedown(function() {
@@ -70,14 +95,9 @@ $('.fa-caret-up.lowerMarker').mousedown(function() {
     $(this).siblings("h1").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
-
-    $('#lowerSlider').attr("value", lowerLimit);
-    $('#upperSlider').attr("value", upperLimit);
-    lowerOutput.textContent = lowerSlider.value;
-    upperOutput.textContent = upperSlider.value;
-
-    $(`#circles`).text("");
-    circleMachina(range);
+    // increment();
+    updateSlider();
+    updateCircles();
 });
 //decrement lower
 $('.fa-caret-down.lowerMarker').mousedown(function() {
@@ -86,14 +106,9 @@ $('.fa-caret-down.lowerMarker').mousedown(function() {
     $(this).siblings("h1").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
-
-    $('#lowerSlider').attr("value", lowerLimit);
-    $('#upperSlider').attr("value", upperLimit);
-    lowerOutput.textContent = lowerSlider.value;
-    upperOutput.textContent = upperSlider.value;
-
-    $(`#circles`).text("");
-    circleMachina(range);
+    // decrement();
+    updateSlider();
+    updateCircles();
 });
 //increment upper
 $('.fa-caret-up.upperMarker').mousedown(function() {
@@ -102,14 +117,9 @@ $('.fa-caret-up.upperMarker').mousedown(function() {
     $(this).siblings("h1").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
-
-    $('#lowerSlider').attr("value", lowerLimit);
-    $('#upperSlider').attr("value", upperLimit);
-    lowerOutput.textContent = lowerSlider.value;
-    upperOutput.textContent = upperSlider.value;
-
-    $(`#circles`).text("");
-    circleMachina(range);
+    // increment();
+    updateSlider();
+    updateCircles();
 });
 
 //decrement upper
@@ -119,12 +129,7 @@ $('.fa-caret-down.upperMarker').mousedown(function() {
     $(this).siblings("h1").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
-
-    $('#lowerSlider').attr("value", lowerLimit);
-    $('#upperSlider').attr("value", upperLimit);
-    lowerOutput.textContent = lowerSlider.value;
-    upperOutput.textContent = upperSlider.value;
-
-    $(`#circles`).text("");
-    circleMachina(range);
+    // decrement();
+    updateSlider();
+    updateCircles();
 });

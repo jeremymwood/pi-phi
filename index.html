@@ -15,17 +15,6 @@
 </head>
 <body>
     <div class="m-5">
-        <div class="d-flex lowerLimit">
-            <h1 class="d-flex me-auto my-auto">
-                Lower Limit: <span class="value lowerValue"></span>
-            </h1>
-            <div class="d-flex">
-                <output class="lower-output me-3 my-auto" for="lowerSlider"></output>
-                <input class="form-range my-auto" type="range" id="lowerSlider" name="lowerSlider">
-            </div>
-            <i class="fa-solid fa-caret-up lowerMarker mx-3"></i>
-            <i class="fa-solid fa-caret-down lowerMarker"></i>
-        </div>
         <div class="d-flex upperLimit">
             <h1 class="d-flex me-auto my-auto">
                 Upper Limit: <span class="value upperValue"></span>
@@ -37,11 +26,23 @@
             <i class="fa-solid fa-caret-up upperMarker mx-3"></i>
             <i class="fa-solid fa-caret-down upperMarker"></i>
         </div>
+        <div class="d-flex lowerLimit mb-3">
+            <h1 class="d-flex me-auto my-auto">
+                Lower Limit: <span class="value lowerValue"></span>
+            </h1>
+            <div class="d-flex">
+                <output class="lower-output me-3 my-auto" for="lowerSlider"></output>
+                <input class="form-range my-auto" type="range" id="lowerSlider" name="lowerSlider">
+            </div>
+            <i class="fa-solid fa-caret-up lowerMarker mx-3"></i>
+            <i class="fa-solid fa-caret-down lowerMarker"></i>
+        </div>
         <div class="d-flex flex-wrap" id="circles"></div>
     </div>
 
     <script src="js/jquery-3.6.3.js"></script>
     <script src="js/script.js"></script>
     <script src="js/slider.js"></script>
+<!--    <script src="js/background.js"></script>-->
 </body>
 </html>
