@@ -2,6 +2,8 @@
 
 const measuredWidth = 84.3;
 const master = Math.sqrt(6) / 2;
+// const master = (1 + Math.sqrt(5)) / 2;
+console.log(master);
 const constant = (measuredWidth / 2.25).toFixed(4);
 
 const rangeMachina = (begin, end, interval) =>
@@ -10,15 +12,11 @@ const rangeMachina = (begin, end, interval) =>
         (value, index) => begin + index * interval
     );
 let lowerLimit = -14;
-let upperLimit = 10;
+let upperLimit = 5;
 let interval = 1;
 let min = -20;
 let max = 20;
 let range = rangeMachina(lowerLimit, upperLimit, interval);
-
-$('#lowerSlider').attr("step", interval).attr("min", min).attr("max", max).attr("value", lowerLimit);
-$('#upperSlider').attr("step", interval).attr("min", min).attr("max", max).attr("value", upperLimit);
-
 let calcUR;
 let calcU;
 let diameter;
@@ -61,19 +59,18 @@ function updateLimits() {
     upperLimit = parseInt($(`.upperValue`).text());
 };
 
-
 let newLimit;
 // function increment() {
 //     updateLimits();
-//     newLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
-//     $(this).siblings("h1").find("span").text(newLimit);
+//     newLimit = parseInt($(this).siblings("h2").find("span").text()) + 1;
+//     $(this).siblings("h2").find("span").text(newLimit);
 //     updateLimits();
 //     range = rangeMachina(lowerLimit, upperLimit, 1);
 // };
 // function decrement() {
 //     updateLimits();
-//     newLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
-//     $(this).siblings("h1").find("span").text(newLimit);
+//     newLimit = parseInt($(this).siblings("h2").find("span").text()) - 1;
+//     $(this).siblings("h2").find("span").text(newLimit);
 //     updateLimits();
 //     range = rangeMachina(lowerLimit, upperLimit, 1);
 // };
@@ -91,8 +88,8 @@ function updateCircles() {
 //increment lower
 $('.fa-caret-up.lowerMarker').mousedown(function() {
     updateLimits();
-    newLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
-    $(this).siblings("h1").find("span").text(newLimit);
+    newLimit = parseInt($(this).siblings("h2").find("span").text()) + 1;
+    $(this).siblings("h2").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
     // increment();
@@ -102,8 +99,8 @@ $('.fa-caret-up.lowerMarker').mousedown(function() {
 //decrement lower
 $('.fa-caret-down.lowerMarker').mousedown(function() {
     updateLimits();
-    newLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
-    $(this).siblings("h1").find("span").text(newLimit);
+    newLimit = parseInt($(this).siblings("h2").find("span").text()) - 1;
+    $(this).siblings("h2").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
     // decrement();
@@ -113,8 +110,8 @@ $('.fa-caret-down.lowerMarker').mousedown(function() {
 //increment upper
 $('.fa-caret-up.upperMarker').mousedown(function() {
     updateLimits();
-    newLimit = parseInt($(this).siblings("h1").find("span").text()) + 1;
-    $(this).siblings("h1").find("span").text(newLimit);
+    newLimit = parseInt($(this).siblings("h2").find("span").text()) + 1;
+    $(this).siblings("h2").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
     // increment();
@@ -125,8 +122,8 @@ $('.fa-caret-up.upperMarker').mousedown(function() {
 //decrement upper
 $('.fa-caret-down.upperMarker').mousedown(function() {
     updateLimits();
-    newLimit = parseInt($(this).siblings("h1").find("span").text()) - 1;
-    $(this).siblings("h1").find("span").text(newLimit);
+    newLimit = parseInt($(this).siblings("h2").find("span").text()) - 1;
+    $(this).siblings("h2").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
     // decrement();
