@@ -22,6 +22,7 @@ let calcU;
 let diameter;
 let radius;
 
+//generate circles within range
 function circleMachina(range) {
     for (let i = range.length -1; i >= 0; i--) {
 
@@ -50,7 +51,7 @@ function circleMachina(range) {
         $(newCircle).css("width", parseFloat(diameter));
     }
 }
-
+//init circles
 circleMachina(range);
 
 //print initial limits
@@ -86,7 +87,7 @@ let newLimit;
 //     updateLimits();
 //     range = rangeMachina(lowerLimit, upperLimit, 1);
 // };
-function updateSlider() {
+function mirrorSlider() {
     $('#lowerSlider').attr("value", lowerLimit);
     $('#upperSlider').attr("value", upperLimit);
     lowerOutput.textContent = lowerSlider.value;
@@ -105,7 +106,7 @@ $('.fa-caret-up.lowerMarker').mousedown(function() {
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
     // increment();
-    updateSlider();
+    mirrorSlider();
     updateCircles();
 });
 //decrement lower
@@ -116,7 +117,7 @@ $('.fa-caret-down.lowerMarker').mousedown(function() {
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
     // decrement();
-    updateSlider();
+    mirrorSlider();
     updateCircles();
 });
 //increment upper
@@ -127,7 +128,7 @@ $('.fa-caret-up.upperMarker').mousedown(function() {
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
     // increment();
-    updateSlider();
+    mirrorSlider();
     updateCircles();
 });
 
@@ -139,6 +140,6 @@ $('.fa-caret-down.upperMarker').mousedown(function() {
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
     // decrement();
-    updateSlider();
+    mirrorSlider();
     updateCircles();
 });

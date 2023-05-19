@@ -21,9 +21,8 @@ body {
 /*}*/
 .circle {
     background-color: black;
-    border: var(--medium-orange) 2px solid;
+    border: var(--medium-orange) 1px solid;
     border-radius: 50%;
-
 }
 .fa-solid {
     font-size: 4em;
