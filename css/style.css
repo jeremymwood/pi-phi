@@ -16,9 +16,9 @@ body {
     height: 100%;
     background-color: black;
 }
-.title {
-    color: var(--medium-orange);
-}
+/*.title {*/
+/*    color: var(--medium-orange);*/
+/*}*/
 .circle {
     background-color: black;
     border: var(--medium-orange) 2px solid;
