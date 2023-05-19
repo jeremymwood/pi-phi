@@ -48,6 +48,8 @@ input {
     font-size: 1.25em;
 }
 .paren {
+    font-family: 'Chivo Mono';
+    font-weight: lighter;
     font-size: 3em;
     /*height: 3em;*/
 }
