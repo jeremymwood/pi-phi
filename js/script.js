@@ -12,7 +12,7 @@ const rangeMachina = (begin, end, interval) =>
         (value, index) => begin + index * interval
     );
 let lowerLimit = -14;
-let upperLimit = 5;
+let upperLimit = 4;
 let interval = 1;
 let min = -20;
 let max = 20;
@@ -31,8 +31,17 @@ function circleMachina(range) {
         radius = ((calcUR * constant) / 2).toFixed(2);
 
         let circleId = `c${range[i]}`;
-        let newCircle = $('<div class="circle m-1"></div>');
+        let newCircle = $('<div class="circle d-flex m-1"></div>');
         newCircle.attr('id', circleId);
+        if (range[i] > 0) {
+            newCircle.append(`<div class="my-auto mx-auto">n = ${range[i]}</div>`);
+        };
+
+        // let newCircleAnno = $(`<div class="m-auto">n = ${range[i]}</div>`);
+        // if (range[i] > 0) {
+        //     $(newCircle).append(newCircleAnno);
+        // };
+
         $('#circles').append(newCircle);
         $(newCircle).css("height", parseFloat(diameter));
         $(newCircle).css("width", parseFloat(diameter));

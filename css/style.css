@@ -16,11 +16,14 @@ body {
     height: 100%;
     background-color: black;
 }
-
+.title {
+    color: var(--medium-orange);
+}
 .circle {
     background-color: black;
     border: var(--medium-orange) 2px solid;
     border-radius: 50%;
+
 }
 .fa-solid {
     font-size: 4em;
@@ -38,4 +41,13 @@ input {
     width: 2em;
     text-align: right;
 }
-
+.equals {
+    width: 1em;
+}
+.equation {
+    font-size: 1.25em;
+}
+.paren {
+    font-size: 3em;
+    /*height: 3em;*/
+}
