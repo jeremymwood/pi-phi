@@ -25,6 +25,9 @@ body {
 .fa-solid {
     font-size: 4em;
 }
+.fa-solid:active {
+    scale: 1.1;
+}
 output {
     width: auto;
 }

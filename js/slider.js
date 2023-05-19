@@ -10,7 +10,9 @@ upperOutput.textContent = upperSlider.value;
 
 lowerSlider.addEventListener("input", function () {
     lowerOutput.textContent = lowerSlider.value;
+    updateLimits();
 });
 upperSlider.addEventListener("input", function () {
     upperOutput.textContent = upperSlider.value;
+    updateLimits();
 });

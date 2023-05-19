@@ -56,7 +56,6 @@ $('.fa-solid').mouseleave(function() {
     $(this).css("color", "");
 });
 
-
 function updateLimits() {
     lowerLimit = parseInt($(`.lowerValue`).text());
     upperLimit = parseInt($(`.upperValue`).text());
