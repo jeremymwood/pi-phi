@@ -23,7 +23,7 @@ let diameter;
 let radius;
 
 //generate circles within range
-function circleMachina(range) {
+function circleMachina() {
     for (let i = range.length -1; i >= 0; i--) {
 
         calcUR = (master ** range[i]).toFixed(4);
@@ -40,12 +40,6 @@ function circleMachina(range) {
             <div class="mb-auto mx-auto">${diameter}</div>
             `);
         };
-
-        // let newCircleAnno = $(`<div class="m-auto">n = ${range[i]}</div>`);
-        // if (range[i] > 0) {
-        //     $(newCircle).append(newCircleAnno);
-        // };
-
         $('#circles').append(newCircle);
         $(newCircle).css("height", parseFloat(diameter));
         $(newCircle).css("width", parseFloat(diameter));
@@ -73,20 +67,6 @@ function updateLimits() {
 };
 
 let newLimit;
-// function increment() {
-//     updateLimits();
-//     newLimit = parseInt($(this).siblings("h2").find("span").text()) + 1;
-//     $(this).siblings("h2").find("span").text(newLimit);
-//     updateLimits();
-//     range = rangeMachina(lowerLimit, upperLimit, 1);
-// };
-// function decrement() {
-//     updateLimits();
-//     newLimit = parseInt($(this).siblings("h2").find("span").text()) - 1;
-//     $(this).siblings("h2").find("span").text(newLimit);
-//     updateLimits();
-//     range = rangeMachina(lowerLimit, upperLimit, 1);
-// };
 function mirrorSlider() {
     $('#lowerSlider').attr("value", lowerLimit);
     $('#upperSlider').attr("value", upperLimit);
@@ -105,7 +85,6 @@ $('.fa-caret-up.lowerMarker').mousedown(function() {
     $(this).siblings("h2").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
-    // increment();
     mirrorSlider();
     updateCircles();
 });
@@ -116,7 +95,6 @@ $('.fa-caret-down.lowerMarker').mousedown(function() {
     $(this).siblings("h2").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
-    // decrement();
     mirrorSlider();
     updateCircles();
 });
@@ -127,7 +105,6 @@ $('.fa-caret-up.upperMarker').mousedown(function() {
     $(this).siblings("h2").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
-    // increment();
     mirrorSlider();
     updateCircles();
 });
@@ -139,7 +116,6 @@ $('.fa-caret-down.upperMarker').mousedown(function() {
     $(this).siblings("h2").find("span").text(newLimit);
     updateLimits();
     range = rangeMachina(lowerLimit, upperLimit, 1);
-    // decrement();
     mirrorSlider();
     updateCircles();
 });
