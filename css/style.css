@@ -20,7 +20,7 @@ body {
 /*    color: var(--medium-orange);*/
 /*}*/
 .circle {
-    background-color: black;
+    background-color: var(--medium-orange);
     border: var(--medium-orange) 1px solid;
     border-radius: 50%;
 }
